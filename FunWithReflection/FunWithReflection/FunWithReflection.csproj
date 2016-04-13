@@ -73,7 +73,9 @@
     <Compile Include="Auditing\Configuration\Mapping\BaseTrackingMap.cs" />
     <Compile Include="Auditing\Configuration\Mapping\PrimaryKeyMap.cs" />
     <Compile Include="Auditing\Configuration\Mapping\PropertyTrackingConfiguerationKey.cs" />
-    <Compile Include="Auditing\Configuration\Mapping\TypeSafeMap.cs" />
+    <Compile Include="Auditing\Interfaces\ILogProvider.cs" />
+    <Compile Include="Core\StateRestore.cs" />
+    <Compile Include="Core\TypeSafeMap.cs" />
     <Compile Include="Auditing\EventArgs\AuditLogGeneratedEventArgs.cs" />
     <Compile Include="Auditing\Extensions\TypeExtensions.cs" />
     <Compile Include="Auditing\External\EntityBase.cs" />

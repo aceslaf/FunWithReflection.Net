@@ -50,7 +50,16 @@ namespace FunWithReflection.Core
                 var property = entityType.GetProperty(logDetail.PropertyName);
                 var value = logDetail.NewValue;
                 Type propertyType = Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType;
-                object safeValue = (value == null) ? null : Convert.ChangeType(value, propertyType);
+                object safeValue;
+                if (propertyType.IsEnum)
+                {
+                    safeValue = Enum.Parse(propertyType, value);
+                }
+                else
+                {
+                    safeValue = (value == null) ? null : Convert.ChangeType(value, propertyType);
+                }
+
                 property.SetValue(res, safeValue);
             }
 
